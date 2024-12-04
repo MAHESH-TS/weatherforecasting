@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/js/bootstrap-custom.css">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    
+    <div class="container text-center m-4">
+    <H1 m-2 p-2 >WEATHER FORECAST<img src="logos.png"  width="100" height="auto"></H1>
+    </div>
+
+    <div class="container" >
+        
+            <div class="row">
+
+            <!-- City 1: CHENNAI -->
+            <div class="Chennai col-md-4 mb-4 container text-center " >
+                <div class="card m-4 p-4 border border-4 p-3">
+                    <h5>CHENNAI❄🌥 </h5>
+                    <button class="btn btn-primary" onclick="getChennaiWeather()">GetWeather</button>
+                    <div class="weather-result" id="Chennai-result"></div>
+                </div>
+            </div>
+
+
+            <!-- City 2: MUMBAI -->
+            <div class="col-md-4 mb-4  container text-center " >
+                <div class="card m-4 p-4 border border-4 ">
+                    <h5>MUMBAI❄🌥</h5>
+                    
+                    <button class="btn btn-primary" onclick="getMumbaiWeather()">Get Weather</button>
+                    <div class="weather-result" id="Mumbai-result"></div>
+                </div>
+            </div>
+
+
+            <!-- City 3: KOLKATA -->
+            <div class="col-md-4 mb-4 container text-center "  >
+                <div class="card m-4 p-4 border border-4">
+                    <h5>KOLKATA❄🌥</h5>
+                    <button class="btn btn-primary" onclick="getKolkataWeather()">Get Weather</button>
+                    <div class="weather-result" id="Kolkata-result"></div>
+                </div>
+            </div>
+
+
+            <!-- City 4: BENGALURU -->
+            <div class="col-md-4 mb-4 container text-center " >
+                <div class="card m-4 p-4 border border-4">
+                    <h5>BENGALURU❄🌥</h5>
+                    <button class="btn btn-primary" onclick="getBengaluruWeather()">GetWeather</button>
+                    <div class="weather-result" id="Bengaluru-result"></div>
+                </div>
+            </div>
+
+
+             <!-- City 5: PUNE -->
+             <div class="col-md-4 mb-4 container text-center " >
+                <div class="card m-4 p-4 border border-4">
+                    <h5>PUNE❄🌥</h5>
+                    <button class="btn btn-primary" onclick="getPuneWeather()">GetWeather</button>
+                    <div class="weather-result" id="Pune-result"></div>
+                </div>
+            </div>
+
+
+             <!-- City 6: AHMEDABAD -->
+             <div class="col-md-4 mb-4 container text-center " >
+                <div class="card m-4 p-4 border border-4">
+                    <h5>AHMEDABAD❄🌥</h5>
+                    <button class="btn btn-primary" onclick="getAhmedabadWeather()">GetWeather</button>
+                    <div class="weather-result" id="Ahmedabad-result"></div>
+                </div>
+            </div>
+
+
+            <!-- City 7: HYDERABAD -->
+            <div class="col-md-4 mb-4 container text-center " >
+                <div class="card m-4 p-4 border border-4">
+                    <h5>HYDERABAD❄🌥</h5>
+                    <button class="btn btn-primary" onclick="getHyderabadWeather()">GetWeather</button>
+                    <div class="weather-result" id="Hyderabad-result"></div>
+                </div>
+            </div>
+
+
+        <!-- City 8: PATNA -->
+    <div class="col-md-4 mb-4 container text-center " >
+        <div class="card m-4 p-4 border border-4">
+            <h5>PATNA❄🌥</h5>
+            <button class="btn btn-primary" onclick="getPatnaWeather()">GetWeather</button>
+            <div class="weather-result" id="Patna-result"></div>
+        </div>
+    </div>
+
+    <!-- City 9: AMARAVATI-->
+    <div class="col-md-4 mb-4 container text-center " >
+        <div class="card m-4 p-4 border border-4">
+            <h5 >AMARAVATI❄🌥</h5>
+            <button class="btn btn-primary" onclick="getAmaravatiWeather()">GetWeather</button>
+            <div class="weather-result" id="Amaravati-result"></div>
+        </div>
+    </div>
+
+    <!-- City 10: THIRUVANANTHAPURAM-->
+    <div class="col-md-4 mb-4 container text-center " >
+        <div class="card m-4 p-4 border border-4">
+            <h5>THIRUVANANTHAPURAM❄🌥</h5>
+            <button class="btn btn-primary" onclick="getThiruvananthapuramWeather()">GetWeather</button>
+            <div class="weather-result" id="Thiruvananthapuram-result"></div>
+        </div>
+    </div>
+
+    <!-- City 11: LUCKNOW-->
+    <div class="col-md-4 mb-4 container text-center" >
+        <div class="card m-4 p-4 border border-4">
+            <h5>LUCKNOW❄🌥</h5>
+            <button class="btn btn-primary" onclick="getLucknowWeather()">GetWeather</button>
+            <div class="weather-result" id="Lucknow-result"></div>
+        </div>
+    </div>
+
+    <!-- City 12: JAIPUR-->
+    <div class="col-md-4 mb-4 container text-center " >
+        <div class="card m-4 p-4 border border-4 ">
+            <h5>JAIPUR❄🌥</h5>
+            <button class="btn btn-primary" onclick="getJaipurWeather()">GetWeather</button>
+            <div class="weather-result" id="Jaipur-result"></div>
+        </div>
+    </div>
+
+    
+
+        
+    
+</div>
+</div>
+
+
+<Script>
+
+function getChennaiWeather() 
+{
+    const apikey='my_key';
+
+    const city = 'Chennai';
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const temp = data.main.temp;
+            const resultElement = document.getElementById('Chennai-result');
+            resultElement.innerHTML = `Temperature in ${city}: ${temp}°C`;
+        })
+        .catch(error => {
+            console.error("Error fetching weather data:", error);
+            const resultElement = document.getElementById('Chennai-result');
+            resultElement.innerHTML = "Error fetching weather data.";
+        });
+
+
+}
+</Script>
+
+<Script>
+
+    function getMumbaiWeather()
+    {
+        const apikey='e09960f33589cfadeb753a253ce08984';
+
+        const city = 'Mumbai';
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
+    
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const temp = data.main.temp;
+                const resultElement = document.getElementById('Mumbai-result');
+                resultElement.innerHTML = `Temperature in ${city}: ${temp}°C`;
+            })
+            .catch(error => {
+                console.error("Error fetching weather data:", error);
+                const resultElement = document.getElementById('Mumbai-result');
+                resultElement.innerHTML = "Error fetching weather data.";
+            });
+    }
+</Script>
+
+<Script>
+    function getKolkataWeather()
+    {
+        const apikey='e09960f33589cfadeb753a253ce08984';
+
+        const city = 'Kolkata';
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
+    
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const temp = data.main.temp;
+                const resultElement = document.getElementById('Kolkata-result');
+                resultElement.innerHTML = `Temperature in ${city}: ${temp}°C`;
+            })
+            .catch(error => {
+                console.error("Error fetching weather data:", error);
+                const resultElement = document.getElementById('Kolkata-result');
+                resultElement.innerHTML = "Error fetching weather data.";
+            });
+    }
+</Script>
+
+<Script>
+    function getBengaluruWeather()
+    {
+        const apikey='e09960f33589cfadeb753a253ce08984';
+
+        const city = 'Bengaluru';
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
+    
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const temp = data.main.temp;
+                const resultElement = document.getElementById('Bengaluru-result');
+                resultElement.innerHTML = `Temperature in ${city}: ${temp}°C`;
+            })
+            .catch(error => {
+                console.error("Error fetching weather data:", error);
+                const resultElement = document.getElementById('Bengaluru-result');
+                resultElement.innerHTML = "Error fetching weather data.";
+            });
+    }
+</Script>
+
+<Script>
+    function getPuneWeather()
+    {
+        const apikey='e09960f33589cfadeb753a253ce08984';
+
+        const city = 'Pune';
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
+    
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const temp = data.main.temp;
+                const resultElement = document.getElementById('Pune-result');
+                resultElement.innerHTML = `Temperature in ${city}: ${temp}°C`;
+            })
+            .catch(error => {
+                console.error("Error fetching weather data:", error);
+                const resultElement = document.getElementById('Pune-result');
+                resultElement.innerHTML = "Error fetching weather data.";
+            });
+    }
+</Script>
+
+
+<Script>
+    function getAhmedabadWeather()
+    {
+        const apikey='e09960f33589cfadeb753a253ce08984';
+
+        const city = 'Ahmedabad';
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
+    
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const temp = data.main.temp;
+                const resultElement = document.getElementById('Ahmedabad-result');
+                resultElement.innerHTML = `Temperature in ${city}: ${temp}°C`;
+            })
+            .catch(error => {
+                console.error("Error fetching weather data:", error);
+                const resultElement = document.getElementById('Ahmedabad-result');
+                resultElement.innerHTML = "Error fetching weather data.";
+            });
+    }
+</Script>
+
+<Script>
+    function getHyderabadWeather()
+    {
+        const apikey='e09960f33589cfadeb753a253ce08984';
+
+        const city = 'Hyderabad';
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
+    
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const temp = data.main.temp;
+                const resultElement = document.getElementById('Hyderabad-result');
+                resultElement.innerHTML = `Temperature in ${city}: ${temp}°C`;
+            })
+            .catch(error => {
+                console.error("Error fetching weather data:", error);
+                const resultElement = document.getElementById('Hyderabad-result');
+                resultElement.innerHTML = "Error fetching weather data.";
+            });
+    }
+</Script>
+
+<Script>
+    function getPatnaWeather()
+    {
+        const apikey='e09960f33589cfadeb753a253ce08984';
+
+        const city = 'Patna';
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
+    
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const temp = data.main.temp;
+                const resultElement = document.getElementById('Patna-result');
+                resultElement.innerHTML = `Temperature in ${city}: ${temp}°C`;
+            })
+            .catch(error => {
+                console.error("Error fetching weather data:", error);
+                const resultElement = document.getElementById('Patna-result');
+                resultElement.innerHTML = "Error fetching weather data.";
+            });
+    }
+</Script>
+
+<Script>
+    function getAmaravatiWeather()
+    {
+        const apikey='e09960f33589cfadeb753a253ce08984';
+
+        const city = 'Amaravati';
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
+    
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const temp = data.main.temp;
+                const resultElement = document.getElementById('Amaravati-result');
+                resultElement.innerHTML = `Temperature in ${city}: ${temp}°C`;
+            })
+            .catch(error => {
+                console.error("Error fetching weather data:", error);
+                const resultElement = document.getElementById('Amaravati-result');
+                resultElement.innerHTML = "Error fetching weather data.";
+            });
+    }
+</Script>
+
+<Script>
+    function getThiruvananthapuramWeather()
+    {
+        const apikey='e09960f33589cfadeb753a253ce08984';
+
+        const city = 'Thiruvananthapuram';
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
+    
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const temp = data.main.temp;
+                const resultElement = document.getElementById('Thiruvananthapuram-result');
+                resultElement.innerHTML = `Temperature in ${city}: ${temp}°C`;
+            })
+            .catch(error => {
+                console.error("Error fetching weather data:", error);
+                const resultElement = document.getElementById('Thiruvananthapuram-result');
+                resultElement.innerHTML = "Error fetching weather data.";
+            });
+    }
+</Script>
+
+<Script>
+    function getLucknowWeather()
+    {
+        const apikey='e09960f33589cfadeb753a253ce08984';
+        const city = 'Lucknow';
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const temp = data.main.temp;
+                const resultElement = document.getElementById('Lucknow-result');
+                resultElement.innerHTML = `Temperature in ${city}: ${temp}°C`;
+            })
+            .catch(error => {
+                console.error("Error fetching weather data:", error);
+                const resultElement = document.getElementById('Lucknow-result');
+                resultElement.innerHTML = "Error fetching weather data.";
+            });
+    }
+</Script>
+
+<Script>
+function getJaipurWeather()
+{
+    const apikey='e09960f33589cfadeb753a253ce08984';
+    const city = 'Jaipur';
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const temp = data.main.temp;
+            const resultElement = document.getElementById('Jaipur-result');
+            resultElement.innerHTML = `Temperature in ${city}: ${temp}°C`;
+        })
+        .catch(error => {
+            console.error("Error fetching weather data:", error);
+            const resultElement = document.getElementById('Jaipur-result');
+            resultElement.innerHTML = "Error fetching weather data.";
+        });
+}
+</Script>
+
+
+
+
+
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Link to your custom JavaScript file -->
+    <script src="assets/js/app.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</body>
+</html>
