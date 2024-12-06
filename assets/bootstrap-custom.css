@@ -1,3 +1,28 @@
+.custom-container {
+    width: 100%; /* Full width */
+    max-width: 1140px; /* Adjust based on desired max-width */
+    margin: 0 auto; /* Center the container */
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  /* Equivalent of 'col-md-4' */
+  .custom-col {
+    width: 33.3333%; /* 4/12 = 33.33% */
+    flex: 0 0 auto; /* Prevents resizing */
+    box-sizing: border-box; /* Ensures padding is within the width */
+  }
+  
+  /* Equivalent of 'mb-4' */
+  .custom-mb {
+    margin-bottom: 1.5rem; /* 24px */
+  }
+  
+  /* Equivalent of 'text-center' */
+  .text-center {
+    text-align: center;
+  }
+
 .container {
     width: 50%;
     max-width: 400px;
