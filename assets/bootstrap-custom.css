@@ -1,10 +1,32 @@
 .custom-container {
     width: 100%; /* Full width */
-    max-width: 1140px; /* Adjust based on desired max-width */
     margin: 0 auto; /* Center the container */
     padding-left: 15px;
     padding-right: 15px;
   }
+/* Default for desktops/laptops */
+.container {
+  max-width: 1200px; /* Limit container width for larger screens */
+}
+
+/* For tablets and small laptops (screen width <= 768px) */
+@media (max-width: 768px) {
+  .container {
+    max-width: 600px; /* Smaller width */
+    padding: 15px;
+    background-color: lightcoral; /* Optional: Different color for clarity */
+  }
+}
+
+/* For mobile devices (screen width <= 480px) */
+@media (max-width: 480px) {
+  .container {
+    max-width: 100%; /* Full width for small screens */
+    padding: 10px;
+    background-color: lightgreen; /* Optional: Different color for clarity */
+  }
+}
+
   
   /* Equivalent of 'col-md-4' */
   .custom-col {
